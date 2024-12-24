@@ -12,7 +12,7 @@ kotlin {
   sourceSets {
     commonMain {
       dependencies {
-        implementation(libs.kotlinx.serialization.json)
+        compileOnly(libs.kotlinx.serialization.json)
       }
     }
   }
