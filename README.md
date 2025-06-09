@@ -15,4 +15,4 @@ dependencies {
 }
 ```
 
-Snapshots can be found [here](https://s01.oss.sonatype.org/#nexus-search;gav~com.eygraber~json-sugar~~~).
+Snapshots can be found [here](https://central.sonatype.org/publish/publish-portal-snapshots/#consuming-via-gradle).
