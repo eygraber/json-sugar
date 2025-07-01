@@ -8,6 +8,7 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.decodeFromStream
 import java.io.ByteArrayInputStream
 import java.io.File
+import java.io.InputStream
 
 @OptIn(ExperimentalSerializationApi::class)
 public fun Json.parseToJsonElement(bytes: ByteArray): JsonElement =
@@ -21,6 +22,19 @@ public fun Json.parseToJsonObjectOrNull(bytes: ByteArray): JsonObject? =
 
 public fun Json.parseToJsonArrayOrNull(bytes: ByteArray): JsonArray? =
   parseToJsonElement(bytes).asJsonArrayOrNull
+
+@OptIn(ExperimentalSerializationApi::class)
+public fun Json.parseToJsonElement(stream: InputStream): JsonElement =
+  decodeFromStream<JsonElement>(stream)
+
+public fun Json.parseToJsonObject(stream: InputStream): JsonObject =
+  parseToJsonElement(stream).asJsonObject
+
+public fun Json.parseToJsonObjectOrNull(stream: InputStream): JsonObject? =
+  parseToJsonElement(stream).asJsonObjectOrNull
+
+public fun Json.parseToJsonArrayOrNull(stream: InputStream): JsonArray? =
+  parseToJsonElement(stream).asJsonArrayOrNull
 
 @OptIn(ExperimentalSerializationApi::class)
 public fun Json.parseToJsonElement(file: File): JsonElement =
