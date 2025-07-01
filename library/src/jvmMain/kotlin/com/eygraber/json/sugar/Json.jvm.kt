@@ -20,6 +20,9 @@ public fun Json.parseToJsonObject(bytes: ByteArray): JsonObject =
 public fun Json.parseToJsonObjectOrNull(bytes: ByteArray): JsonObject? =
   parseToJsonElement(bytes).asJsonObjectOrNull
 
+public fun Json.parseToJsonArray(bytes: ByteArray): JsonArray =
+  parseToJsonElement(bytes).asJsonArray
+
 public fun Json.parseToJsonArrayOrNull(bytes: ByteArray): JsonArray? =
   parseToJsonElement(bytes).asJsonArrayOrNull
 
@@ -32,6 +35,9 @@ public fun Json.parseToJsonObject(stream: InputStream): JsonObject =
 
 public fun Json.parseToJsonObjectOrNull(stream: InputStream): JsonObject? =
   parseToJsonElement(stream).asJsonObjectOrNull
+
+public fun Json.parseToJsonArray(stream: InputStream): JsonArray =
+  parseToJsonElement(stream).asJsonArray
 
 public fun Json.parseToJsonArrayOrNull(stream: InputStream): JsonArray? =
   parseToJsonElement(stream).asJsonArrayOrNull
