@@ -1,11 +1,9 @@
 package com.eygraber.json.sugar
 
-import kotlinx.serialization.json.JsonArrayBuilder
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.buildJsonArray
 
 @DslMarker
 internal annotation class JsonBuilderDslMarker
@@ -53,7 +51,7 @@ public class JsonSugarObjectBuilder @PublishedApi internal constructor() {
     content[this] = buildJsonObject(builderAction)
   }
 
-  public infix fun String.withJsonArray(builderAction: JsonArrayBuilder.() -> Unit) {
+  public infix fun String.withJsonArray(builderAction: JsonSugarArrayBuilder.() -> Unit) {
     content[this] = buildJsonArray(builderAction)
   }
 
