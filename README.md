@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-  implementation("com.eygraber:json-sugar:0.7.1")
+  implementation("com.eygraber:json-sugar:0.7.2")
 }
 ```
 
