@@ -77,7 +77,7 @@ public inline fun <reified T : Enum<T>> JsonObject.enum(
     val availableValues = enumValues<T>().joinToString()
     val suffix = errorSuffix?.let { " $it" }.orEmpty()
 
-    "$key ($v) is required to be one of [$availableValues]$suffix"
+    "$key (${v ?: "null"}) is required to be one of [$availableValues]$suffix"
   }
 }
 

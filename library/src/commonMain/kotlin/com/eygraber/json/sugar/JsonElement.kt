@@ -90,5 +90,5 @@ public inline fun JsonElement.primitiveOrParseObject(
 
   is JsonPrimitive -> this
 
-  else -> null
+  is JsonArray -> null
 }
