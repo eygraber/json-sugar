@@ -46,8 +46,8 @@ dependencyResolutionManagement {
 }
 
 plugins {
-  id("com.eygraber.conventions.settings") version "0.0.94"
-  id("com.gradle.develocity") version "4.3"
+  id("com.eygraber.conventions.settings") version "0.0.97"
+  id("com.gradle.develocity") version "4.3.1"
 }
 
 rootProject.name = "json-sugar"
